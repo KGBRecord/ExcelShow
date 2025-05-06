@@ -33,9 +33,11 @@ export class ExcelShow implements ComponentFramework.ReactControl<IInputs, IOutp
         };
 
         let excelRows = context.parameters.ExcelRows;
+        let fillColumns = context.parameters.FillColumns;
         const props: IDatasetToExcelProps = {
             makerStyleProps: stylesProps,
             excelRows: excelRows,
+            fillColumns: fillColumns,
             isLoading: context.parameters.Loading.raw! || false
         };
 

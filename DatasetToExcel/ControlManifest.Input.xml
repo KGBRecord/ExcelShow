@@ -6,6 +6,7 @@
            control-type="virtual">
 
     <property name="ExcelRows" display-name-key="ExcelRows" of-type="Multiple" usage="input" required="false" />
+    <property name="FillColumns" display-name-key="FillColumns" of-type="SingleLine.Text" usage="input" required="false" />
     <property name="Loading"
               display-name-key="Loading"
               description-key="Boolean to toggle loading spinner"
