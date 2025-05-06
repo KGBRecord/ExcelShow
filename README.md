@@ -8,11 +8,13 @@ It accepts a JSON array of rows (typically parsed from Excel files) and renders 
 
 ## ✅ Features
 
-### 🔢 Smart Column Ordering
+In many cases, column order from Excel or Power Automate may appear inconsistent or shuffled. To improve readability, this component automatically reorders columns as follows:
 
-- **Priority columns** (e.g., `STT`, `ID`, `Mã`, `Code`) are always shown first.
-- **Note columns** (`Ghi chú`, `Note`, etc.) are pushed to the end.
-- Remaining columns are sorted **by maximum data length**, descending — so columns with the longest content appear earlier for visibility.
+- Priority columns like `STT`, `ID`, `Mã`, `Code` appear first
+- Note-related columns (`Ghi chú`, `Note`, etc.) appear last
+- All other columns are sorted by their longest value (in descending order)
+
+> In future releases, we plan to support toggling this behavior and allowing custom column order configuration.
 
 ### 🎨 Conditional Row Highlighting
 
