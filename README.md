@@ -65,8 +65,13 @@ Set(
 
 Set(
     excelRows,
-    Text(JSON(parsedResult.excelRows), PlainText)
-);
+    Text(
+        JSON(
+            parsedResult.excelRows,
+            JSONFormat.IncludeBinaryData
+        )
+    )
+)
 
 Set(
     fillRule,
