@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<manifest>
+  <control namespace="GENLieu" constructor="ExcelShow" version="1.0.0"
+           display-name-key="ExcelShow"
+           description-key="Displays dataset as HTML table"
+           control-type="virtual">
+
+    <property name="ExcelRows" display-name-key="ExcelRows" of-type="SingleLine.Text" usage="input" required="false" />
+    <property name="Loading"
+              display-name-key="Loading"
+              description-key="Boolean to toggle loading spinner"
+              of-type="TwoOptions"
+              usage="input"
+              required="false"
+              default-value="false" />
+
+    <property name="TextColor" display-name-key="Text Color" of-type="SingleLine.Text" usage="input" required="false" default-value="black" />
+    <property name="BGColor" display-name-key="Background Color" of-type="SingleLine.Text" usage="input" required="false" default-value="white" />
+    <property name="BorderColor" display-name-key="Border Color" of-type="SingleLine.Text" usage="input" required="false" />
+    <property name="BorderHoverColor" display-name-key="Border Hover Color" of-type="SingleLine.Text" usage="input" required="false" />
+    <property name="BorderWidth" display-name-key="Border Width" of-type="Whole.None" usage="input" required="false" />
+    <property name="BorderRadius" display-name-key="Border Radius" of-type="Whole.None" usage="input" required="false" />
+
+    <resources>
+      <code path="index.ts" order="1" />
+      <platform-library name="React" version="16.8.6" />
+    </resources>
+  </control>
+</manifest>
