@@ -48,8 +48,8 @@ Số lượng|>|10|#ffe0e0, Đầu mục chuẩn hóa|=|Không xác định|#fff
 
 | Property       | Type      | Description                                             |
 |----------------|-----------|---------------------------------------------------------|
-| `ExcelRows`    | `SingleLine.TextArea` | JSON string of array of rows (from Flow or API)         |
-| `FillColumns`  | `SingleLine.TextArea` | String-based rules to color rows based on cell values   |
+| `ExcelRows`    | `Multiple` | JSON string of array of rows (from Flow or API)         |
+| `FillColumns`  | `SingleLine.Text` | String-based rules to color rows based on cell values   |
 | `Loading`      | `TwoOptions`         | Set to `true` to show a loading state                    |
 | Style props    | `Text`, `Color`, etc. | Controls for text color, border, hover effects, etc.     |
 
