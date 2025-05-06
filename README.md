@@ -19,7 +19,9 @@ It accepts a JSON array of rows (typically parsed from Excel files) and renders 
 Using the `FillColumns` property, you can define dynamic row background coloring rules based on cell values.
 
 #### Format:
-`[ColumnName]|[Operator]|[ComparisonValue]|[RowColor]`
+```
+[ColumnName]|[Operator]|[ComparisonValue]|[RowColor]
+```
 
 #### Operators supported:
 | Operator | Meaning            | Example                           |
@@ -36,7 +38,9 @@ Using the `FillColumns` property, you can define dynamic row background coloring
 
 #### Multiple rules (comma-separated):
 
-`Số lượng|>|10|#ffe0e0, Đầu mục chuẩn hóa|=|Không xác định|#ffffcc`
+```
+Số lượng|>|10|#ffe0e0, Đầu mục chuẩn hóa|=|Không xác định|#ffffcc
+```
 
 ---
 
@@ -70,3 +74,6 @@ Set(
 );
 
 // Pass `excelRows` and `fillRule` into the PCF component
+```
+**🎼 Powered By [@KGBRecord](https://github.com/KGBRecord)**  
+*Where code meets melody, and ideas become anthems.*  
