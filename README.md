@@ -8,6 +8,8 @@ It accepts a JSON array of rows (typically parsed from Excel files) and renders 
 
 ## ✅ Features
 
+### 🧩 Column Reordering Logic
+
 In many cases, column order from Excel or Power Automate may appear inconsistent or shuffled. To improve readability, this component automatically reorders columns as follows:
 
 - Priority columns like `STT`, `ID`, `Mã`, `Code` appear first
