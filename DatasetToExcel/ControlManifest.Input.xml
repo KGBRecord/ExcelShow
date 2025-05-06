@@ -5,7 +5,7 @@
            description-key="Displays dataset as HTML table"
            control-type="virtual">
 
-    <property name="ExcelRows" display-name-key="ExcelRows" of-type="SingleLine.Text" usage="input" required="false" />
+    <property name="ExcelRows" display-name-key="ExcelRows" of-type="Multiple" usage="input" required="false" />
     <property name="Loading"
               display-name-key="Loading"
               description-key="Boolean to toggle loading spinner"

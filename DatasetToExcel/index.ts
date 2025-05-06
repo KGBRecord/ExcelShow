@@ -32,10 +32,10 @@ export class ExcelShow implements ComponentFramework.ReactControl<IInputs, IOutp
             buttonHeight: context.mode.allocatedHeight
         };
 
-        const dataSet: any = context.parameters.ExcelRows;
+        let excelRows = context.parameters.ExcelRows;
         const props: IDatasetToExcelProps = {
             makerStyleProps: stylesProps,
-            excelRows: dataSet as any,
+            excelRows: excelRows,
             isLoading: context.parameters.Loading.raw! || false
         };
 
