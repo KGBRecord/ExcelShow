@@ -1,40 +1,72 @@
-# Export Dataset to Excel file code component
+# 📊 ExcelShow PCF Component
+
+**ExcelShow** is a Power Apps PCF (PowerApps Component Framework) component that displays Excel-like tabular data dynamically inside Canvas Apps.
+
+It accepts a JSON array of rows (typically parsed from Excel files) and renders them in a scrollable, styled HTML table. The component also supports advanced row coloring rules and intelligent column ordering to enhance readability.
+
 ---
-### _Powerapp code component to export dataset to excel file_
-#
-#
-#
 
+## ✅ Features
 
-DatasetToExcel is a code component that can be used in powerapps to export any dataset to an excel file with features:
+### 🔢 Smart Column Ordering
 
-## Features
+- **Priority columns** (e.g., `STT`, `ID`, `Mã`, `Code`) are always shown first.
+- **Note columns** (`Ghi chú`, `Note`, etc.) are pushed to the end.
+- Remaining columns are sorted **by maximum data length**, descending — so columns with the longest content appear earlier for visibility.
 
-- Columns name based on selected fields in fields property
-- Columns order based on selected fields in fields property
-- Loading indicator
-- customizable button (color,fill,font color,font size, border radius,border color)
+### 🎨 Conditional Row Highlighting
 
+Using the `FillColumns` property, you can define dynamic row background coloring rules based on cell values.
 
-**_Dataset to excel_** custom control is a pcf code compoent to export ant dataset within microsoft powerapps to excel file as simple as dealing with powerapps standard gallery
-with customizable button to match your app style.
+#### Format:
+`[ColumnName]|[Operator]|[ComparisonValue]|[RowColor]`
 
-## Import the component to your tenant
+#### Operators supported:
+| Operator | Meaning            | Example                        |
+|----------|--------------------|--------------------------------|
+| `=`      | Equals             | `Số lượng|=|5|#ffffcc`          |
+| `!=`     | Not equals         | `Mã|!=|A12|#ffeeee`             |
+| `>`      | Greater than       | `Số lượng|>|10|#ffe0e0`         |
+| `<`      | Less than          | `Giá trị|<|1000|#e0ffe0`        |
+| `>=`     | Greater or equal   | `Tuổi|>=|18|#d0f0ff`            |
+| `<=`     | Less or equal      | `Tuổi|<=|12|#f0f8ff`            |
+| `~`      | Contains (string)  | `Mô tả|~|cút|#f5e0ff`           |
+| `^`      | Starts with        | `Vật liệu|^|Inox|#e0e0ff`       |
+| `$`      | Ends with          | `Mã sản phẩm|$|.xlsx|#ffffdd`   |
 
-Here is how to add the component to your microsoft dynamic 365:
-- Before start using the component, you need to enable the Code Component in your environment if it is not enabled.
-- from github repo releases, download the latest released solution.
-- in you microsoft account navigate to powerapps, then solutions and select import solution, then continue importing the solution that you have downloaded from github.
-- if solution imported successfully, open the app that you want to use the component in it, then select Insert menu form the left side bar, then in yhe bottom of the side bar, select **_Get more components_**, this will open a dialog in the right side, the dialog has 2 tabs, **_canvas_** and **_code_**, select code tab, then find DatasetToExcel component and import it.
+#### Multiple rules (comma-separated):
 
+`Số lượng|>|10|#ffe0e0, Đầu mục chuẩn hóa|=|Không xác định|#ffffcc`
 
-## Usage
+---
 
-Insert the data collection to "Items" property, once the button clicked, the component should download Excel file containing the data in collection
+## 🧩 Properties
 
-- Remember to add desired fields in component fields property
-- You can change the apearance of button by changing the component properties for color, icon text color, etc..
+| Property       | Type      | Description                                             |
+|----------------|-----------|---------------------------------------------------------|
+| `ExcelRows`    | `SingleLine.TextArea` | JSON string of array of rows (from Flow or API)         |
+| `FillColumns`  | `SingleLine.TextArea` | String-based rules to color rows based on cell values   |
+| `Loading`      | `TwoOptions`         | Set to `true` to show a loading state                    |
+| Style props    | `Text`, `Color`, etc. | Controls for text color, border, hover effects, etc.     |
 
+---
 
-###### _Powered by Hussam Aoldat._
-###### _linkedin: [Hussam Odat](https://www.linkedin.com/in/hussam-odat-5075aa73)_
+## 🛠 Usage Example
+
+```powerfx
+Set(
+    parsedResult,
+    ParseJSON(response.result)
+);
+
+Set(
+    excelRows,
+    Text(JSON(parsedResult.excelRows), PlainText)
+);
+
+Set(
+    fillRule,
+    "Số lượng|>|10|#ffe0e0, Đầu mục chuẩn hóa|=|Không xác định|#ffffcc"
+);
+
+// Pass `excelRows` and `fillRule` into the PCF component
