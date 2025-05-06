@@ -22,17 +22,17 @@ Using the `FillColumns` property, you can define dynamic row background coloring
 `[ColumnName]|[Operator]|[ComparisonValue]|[RowColor]`
 
 #### Operators supported:
-| Operator | Meaning            |
-|----------|--------------------|
-| `=`      | Equals             |
-| `!=`     | Not equals         |
-| `>`      | Greater than       |
-| `<`      | Less than          |
-| `>=`     | Greater or equal   |
-| `<=`     | Less or equal      |
-| `~`      | Contains (string)  |
-| `^`      | Starts with        |
-| `$`      | Ends with          |
+| Operator | Meaning            | Example                           |
+|----------|--------------------|-----------------------------------|
+| `=`      | Equals             | `Số lượng\|=\|5\|#ffffcc`             |
+| `!=`     | Not equals         | `Mã\|!=\|A12\|#ffeeee`               |
+| `>`      | Greater than       | `Số lượng\|>\|10\|#ffe0e0`           |
+| `<`      | Less than          | `Giá trị\|<\|1000\|#e0ffe0`          |
+| `>=`     | Greater or equal   | `Tuổi\|>=\|18\|#d0f0ff`              |
+| `<=`     | Less or equal      | `Tuổi\|<=\|12\|#f0f8ff`              |
+| `~`      | Contains (string)  | `Mô tả\|~\|cút\|#f5e0ff`             |
+| `^`      | Starts with        | `Vật liệu\|^\|Inox\|#e0e0ff`         |
+| `$`      | Ends with          | `Mã sản phẩm\|$\|.xlsx\|#ffffdd`     |
 
 #### Multiple rules (comma-separated):
 
