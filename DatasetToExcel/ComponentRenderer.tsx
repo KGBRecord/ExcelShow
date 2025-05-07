@@ -108,7 +108,7 @@ export const ComponentRenderer = (props: IDatasetToExcelProps) => {
     (col) => !["@odata.etag", "ItemInternalId"].includes(col)
   );
 
-  const priorityCols = ["stt", "id", "mã", "code"];
+  const priorityCols = ["tt","stt", "id", "mã", "code"];
   const fixedCols = rawColumns.filter((col) =>
     priorityCols.includes(col.trim().toLowerCase())
   );
